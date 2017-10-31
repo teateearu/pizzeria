@@ -45,15 +45,24 @@ def total_amount(menu_nr, pizza_cnt)
 end
 
 initialize_pizzas
-puts "Welcome to Tea's and Ward's pizzeria!"
+time=Time.new
+puts "Welcome to Tea's and Ward's pizzeria! #{time}"
+
+
 name = customer_name
 puts "Hi #{name.capitalize}, which pizza would you like to order?"
 show_menu
 menu_nr, pizza_cnt = take_order
 
 total = total_amount menu_nr, pizza_cnt
-if total > 0
-  puts "Thank you for your amazing order. The total is #{total} Euro."
+if total > 0 && total < 10
+  puts "Thank you for your amazing order. The total is #{total} Euro, including delivery cost 2,50 euro."
+  puts "Your order will be delivered soon."
+elsif total > 20
+  puts "Thank you for your amazing order. The total is #{total} Euro, including your 10% discount."
+  puts "Your order will be delivered soon."
+elsif total >= 10
+  puts "Thank you for your amazing order. The total is #{total} Euro, delivery is free."
   puts "Your order will be delivered soon."
 else
   puts "Something went wrong, try again."
