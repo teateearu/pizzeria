@@ -9,3 +9,10 @@ def customer_name
   print "What's your name? "
   return gets.chomp
 end
+
+def show_menu
+  puts "1 - Pepperoni - #{@pizza_pepperoni} Euro"
+  puts "2 - Quattro Fromaggi - #{@pizza_quattro_fromaggi} Euro"
+  puts "3 - Margherita - #{@pizza_margherita} Euro"
+  puts "4 - Vegetariana - #{@pizza_vegetariana} Euro"
+end 
