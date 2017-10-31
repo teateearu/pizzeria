@@ -24,3 +24,22 @@ def take_order
   count = gets.chomp.to_i
   return number, count
 end
+
+def total_amount(menu_nr, pizza_cnt)
+  price = 0
+  price = @pizza_pepperoni if menu_nr == '1'
+  price = @pizza_quattro_fromaggi if menu_nr == '2'
+  price = @pizza_margherita if menu_nr == '3'
+  price = @pizza_vegetariana if menu_nr == '4'
+
+  amount = price * pizza_cnt
+
+  if amount > 20
+    amount *= 0.9
+  end
+  if amount < 10 && amount > 0
+    amount += 2.5
+  end
+
+  return amount
+end
