@@ -43,3 +43,18 @@ def total_amount(menu_nr, pizza_cnt)
 
   return amount
 end
+
+initialize_pizzas
+puts "Welcome to Tea's and Ward's pizzeria!"
+name = customer_name
+puts "Hi #{name.capitalize}, which pizza would you like to order?"
+show_menu
+menu_nr, pizza_cnt = take_order
+
+total = total_amount menu_nr, pizza_cnt
+if total > 0
+  puts "Thank you for your amazing order. The total is #{total} Euro."
+  puts "Your order will be delivered soon."
+else
+  puts "Something went wrong, try again."
+end
